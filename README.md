@@ -1,5 +1,8 @@
 ## Magic Paper API
 
+The Magic Paper API exposes scraping, embedding, and processing pipelines in a
+few easy to use high-level endpoints.
+
 ------------------------------------------------------------------------------------------
 
 #### Headers (provide all of these)
@@ -17,10 +20,16 @@
 | `html`    |  html to parse and process  |
 | `url`     |  url to scrape, parse and process  |
 
+#### Format parameter (optional)
+
+| name      | description |
+|-----------|-----------|
+| `format`    |  `markdown` to parse html in markdown, default is just plaintext  |
+
 #### Routes
 
 <details>
- <summary><code>POST</code> <code><b>/api/v1/read</b></code> <code>(returns the extracted markdown for given inputs)</code></summary>
+ <summary><code>POST</code> <code><b>/api/v1/read</b></code> <code>(returns the parsed text for given inputs)</code></summary>
 
 ##### Parameters
 
