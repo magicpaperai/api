@@ -129,3 +129,39 @@ few easy to use high-level endpoints.
 > ```
 
 </details>
+
+<details>
+ <summary><code>POST</code> <code><b>/api/v1/cluster</b></code> <code>(extracts fragments in topic clusters)</code></summary>
+
+##### Parameters
+
+> | name      |  type     | data type               | description                                                           |
+> |-----------|-----------|-------------------------|----------------------------|
+> | `limit`     |  optional | integer   | the max number of clusters to return (default 4) |
+
+
+##### Example Response
+
+> ```json
+> {
+>     "clusters": [
+>         {
+>             "sentences": ["The quick brown fox jumped over the lazy dog."],
+>             "intervals": [[0, 45]],
+>             "hue": 0.0
+>         }
+>     ]
+> }
+> ```
+
+##### Example CURL
+
+> ```sh
+> curl -X POST \
+>   -d "{\"url\": \"$url\", \"limit\": 2}" \
+>   -H 'Content-Type: application/json' \
+>   -H 'Authorization: Bearer sk-0000-0000-0000' \
+>   http://alpha.magicpaper.ai/api/v1/cluster
+> ```
+
+</details>
