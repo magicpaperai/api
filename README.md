@@ -165,3 +165,52 @@ few easy to use high-level endpoints.
 > ```
 
 </details>
+
+<details>
+ <summary>🧪 <code>POST</code> <code><b>/api/v1/experiments/salience</b></code> <code>(updated salience algorithm)</code></summary>
+
+##### Parameters
+
+> | name      |  type     | data type               | description                                                           |
+> |-----------|-----------|-------------------------|----------------------------|
+> | `limit`     |  optional | integer   | the max number of fragments to return (default 5) |
+> | `temperature`     |  optional | float   | higher temperature has more breadth, lower more depth |
+
+
+##### Example Response
+
+> ```json
+> {
+>   "prompt": "The following are key excerpts from a text. Some context will be missing, so do not assume that these excerpts are a complete representation of the orgiinal text. If the text is well-known, use the chosen excerpts to produce a summary. Otherwise, based on the excerpts and title, do your best to summarize the original text. Your response should be written like a summary of the text, with no mention of excerpts.\n\n\n## Title\nWorse Is Better\n\n## Author(s)\nNone\n\n## Excerpts\n- And it’s possible to design systems with the big picture in mind.\n- The most important problem in system design is making sure it will evolve effectively, and it’s as much a social problem as a technical one.\n\n## Summary",
+>   "sentences": [
+>     {
+>       "block": 10,
+>       "range": [
+>         4284,
+>         4349
+>       ],
+>       "sentence": "And it’s possible to design systems with the big picture in mind."
+>     },
+>     {
+>       "block": 12,
+>       "range": [
+>         4993,
+>         5133
+>       ],
+>       "sentence": "The most important problem in system design is making sure it will evolve effectively, and it’s as much a social problem as a technical one."
+>     }
+>   ]
+> }
+> ```
+
+##### Example CURL
+
+> ```sh
+> curl -X POST \
+>   -d '{"url": "http://blog.mattneary.com/worse-is-better", "limit": 2, "temperature": 0}' \
+>   -H 'Content-Type: application/json' \
+>   -H 'Authorization: Bearer sk-0000-0000-0000' \
+>   http://alpha.magicpaper.ai/api/v1/experiments/salience
+> ```
+
+</details>
