@@ -137,7 +137,7 @@ few easy to use high-level endpoints.
 
 > | name      |  type     | data type               | description                                                           |
 > |-----------|-----------|-------------------------|----------------------------|
-> | `limit`     |  optional | integer   | the max number of clusters to return (default 4) |
+> | `limit`     |  optional | integer   | the max number of clusters to return (default 6) |
 
 
 ##### Example Response
@@ -148,6 +148,7 @@ few easy to use high-level endpoints.
 >         {
 >             "sentences": ["The quick brown fox jumped over the lazy dog."],
 >             "intervals": [[0, 45]],
+>             "title": ["quick brown fox, lazy dog"],
 >             "hue": 0.0
 >         }
 >     ]
